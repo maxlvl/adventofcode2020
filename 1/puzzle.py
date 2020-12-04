@@ -207,7 +207,7 @@ INPUT = [
 
 result_list = []
 
-
+# simple bruteforce solution
 def calculate():
     tic = time.perf_counter()
     for number in INPUT:
@@ -218,7 +218,6 @@ def calculate():
     print(result_list[0] * result_list[1])
     toc = time.perf_counter()
     print(f"Ran puzzle in {toc - tic:0.10f} seconds")
-    return result_list[0] * result_list[1]
 
 
 if __name__ == "__main__":

@@ -207,13 +207,17 @@ INPUT = [
 
 result_list = []
 
+# Dict lookup is o(1) so should be much faster. Also, as of 3.6, dicts are ordered by
+# default. The sorted_dict name is a bit redundant, but whatevs. I don't know if
+# dict.keys() is linear or constant (I assume the former), so that's a possible
+# optimization
 
 def calculate():
     tic = time.perf_counter()
-    sorted_input = {k:None for k in INPUT}
-    for number in sorted_input:
+    sorted_dict = {k:None for k in INPUT}
+    for number in sorted_dict:
         result = 2020 - number
-        if result in sorted_input.keys():
+        if result in sorted_dict.keys():
                 print(number * result)
                 break
 
